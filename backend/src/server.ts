@@ -30,8 +30,13 @@ app.use(
 app.use(
   cors({
     origin: (origin, callback) => {
-      // allow requests with no origin (like mobile apps or curl) or frontend origin
-      if (!origin || origin === CLIENT_URL || origin.startsWith("http://localhost:")) {
+      // allow requests with no origin (like server-to-server or curl), configured CLIENT_URL, localhost, or vercel deployments
+      if (
+        !origin ||
+        origin === CLIENT_URL ||
+        origin.startsWith("http://localhost:") ||
+        origin.endsWith(".vercel.app")
+      ) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
