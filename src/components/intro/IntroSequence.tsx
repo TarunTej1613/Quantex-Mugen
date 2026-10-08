@@ -117,8 +117,8 @@ export const IntroSequence: React.FC = () => {
               <div className="absolute inset-0 bg-black/50" />
             </div>
 
-            {/* Main Crisp Video (100% fitted, zero cropping, full text & logo visibility) */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center p-2 sm:p-0">
+            {/* Main Crisp Video (Rotates to Portrait on Portrait Mobile, Landscape on Desktop) */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center overflow-hidden">
               <video
                 ref={videoRef}
                 src="/assets/intro.mp4"
@@ -130,7 +130,9 @@ export const IntroSequence: React.FC = () => {
                 preload="auto"
                 onEnded={handleVideoEnded}
                 onError={handleVideoError}
-                className="w-full h-full max-w-full max-h-full object-contain object-center transform-gpu shadow-2xl"
+                className="transform-gpu shadow-2xl transition-all duration-500
+                  portrait:rotate-90 portrait:w-[100dvh] portrait:h-[100vw] portrait:max-w-none portrait:max-h-none portrait:object-contain
+                  landscape:rotate-0 landscape:w-full landscape:h-full landscape:max-w-full landscape:max-h-full landscape:object-contain"
               />
             </div>
 
