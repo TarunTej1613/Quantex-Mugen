@@ -33,10 +33,10 @@ export const GlassHeader: React.FC = () => {
       <div className="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 py-2.5">
         <div className="flex items-center justify-between px-3 sm:px-5 py-2.5 rounded-2xl liquid-glass backdrop-blur-xl border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)]">
           {/* Organizers Logos (OWASP + CyberNerds) */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-4 shrink-0">
             {/* OWASP Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative h-8 sm:h-10 w-28 sm:w-36 px-2 py-1 rounded-xl bg-white/95 border border-white/30 flex items-center justify-center transition-all group-hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] overflow-hidden">
+              <div className="relative h-7 sm:h-10 w-20 xs:w-24 sm:w-36 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg sm:rounded-xl bg-white/95 border border-white/30 flex items-center justify-center transition-all group-hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] overflow-hidden">
                 <Image
                   src="/assets/owasp-logo.png"
                   alt="OWASP KARE Student Chapter"
@@ -49,11 +49,11 @@ export const GlassHeader: React.FC = () => {
             </Link>
 
             {/* Separator */}
-            <div className="w-[1px] h-6 bg-white/20" />
+            <div className="w-[1px] h-4 sm:h-6 bg-white/20" />
 
             {/* CyberNerds Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="relative h-8 sm:h-10 w-28 sm:w-36 px-2 py-1 rounded-xl bg-black/90 border border-white/15 flex items-center justify-center transition-all group-hover:border-rose-500/50 group-hover:shadow-[0_0_15px_rgba(225,29,72,0.3)] overflow-hidden">
+              <div className="relative h-7 sm:h-10 w-20 xs:w-24 sm:w-36 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-lg sm:rounded-xl bg-black/90 border border-white/15 flex items-center justify-center transition-all group-hover:border-rose-500/50 group-hover:shadow-[0_0_15px_rgba(225,29,72,0.3)] overflow-hidden">
                 <Image
                   src="/assets/cybernerds-logo.png"
                   alt="CyberNerds KARE Student Chapter"

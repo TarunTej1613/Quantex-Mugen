@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { IntroProvider } from "@/context/IntroContext";
@@ -16,6 +16,14 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#030712",
+};
 
 export const metadata: Metadata = {
   title: "QUANTEX MUGEN — WHERE LIMITS CEASE, POSSIBILITIES BEGIN",
