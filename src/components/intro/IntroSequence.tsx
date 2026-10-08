@@ -101,8 +101,24 @@ export const IntroSequence: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="relative w-full h-full flex items-center justify-center bg-black overflow-hidden"
           >
-            {/* Edge-to-Edge Portrait & Responsive Video Container */}
-            <div className="relative w-full h-full min-h-[100dvh] w-screen flex items-center justify-center overflow-hidden">
+            {/* Ambient Background Glow Layer (fills portrait screen beautifully) */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <video
+                src="/assets/intro.mp4"
+                autoPlay
+                playsInline
+                webkit-playsinline="true"
+                x5-playsinline="true"
+                muted
+                preload="auto"
+                aria-hidden="true"
+                className="w-full h-full min-h-[100dvh] min-w-full object-cover object-center blur-3xl opacity-30 scale-125 transform-gpu"
+              />
+              <div className="absolute inset-0 bg-black/50" />
+            </div>
+
+            {/* Main Crisp Video (100% fitted, zero cropping, full text & logo visibility) */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center p-2 sm:p-0">
               <video
                 ref={videoRef}
                 src="/assets/intro.mp4"
@@ -114,7 +130,7 @@ export const IntroSequence: React.FC = () => {
                 preload="auto"
                 onEnded={handleVideoEnded}
                 onError={handleVideoError}
-                className="w-full h-full min-h-[100dvh] min-w-full object-cover object-center transform-gpu"
+                className="w-full h-full max-w-full max-h-full object-contain object-center transform-gpu shadow-2xl"
               />
             </div>
 
