@@ -101,8 +101,8 @@ export const IntroSequence: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="relative w-full h-full flex items-center justify-center bg-black overflow-hidden"
           >
-            {/* Responsive Fitted Video Container with 16:9 Aspect fitting on all devices */}
-            <div className="relative w-full h-full flex items-center justify-center max-w-full max-h-full">
+            {/* Edge-to-Edge Portrait & Responsive Video Container */}
+            <div className="relative w-full h-full min-h-[100dvh] w-screen flex items-center justify-center overflow-hidden">
               <video
                 ref={videoRef}
                 src="/assets/intro.mp4"
@@ -114,7 +114,7 @@ export const IntroSequence: React.FC = () => {
                 preload="auto"
                 onEnded={handleVideoEnded}
                 onError={handleVideoError}
-                className="w-full h-full max-w-full max-h-full object-contain transform-gpu"
+                className="w-full h-full min-h-[100dvh] min-w-full object-cover object-center transform-gpu"
               />
             </div>
 
